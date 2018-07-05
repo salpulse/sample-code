@@ -12,7 +12,6 @@ if (Meteor.isServer) {
     constructor() {
       super('notifications_digest');
 
-      // This is for documentation purposes. We don't use this schema to validate
       this.schema = new SimpleSchema({
         userId: SimpleSchema.RegEx.Id,
         orgId: SimpleSchema.RegEx.Id,
