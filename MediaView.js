@@ -37,14 +37,12 @@ export default class MediaView extends React.Component {
 
   onImageClick = index => event => {
     event.preventDefault();
-    console.log(index);
     this.setState({ clickedImageIndex: index });
     this.setState({ isGalleryOpen: true });
   };
 
   getImageURL(image, maxHeight = undefined) {
     const heightModifier = maxHeight ? `h_${Math.min(image.height, maxHeight)}/` : '';
-    console.log(heightModifier);
     return `${Cloudinary.publicCredentials().root_url}/${
       Cloudinary.publicCredentials().cloud_name
     }/${heightModifier}${image.imageId}.png`;
